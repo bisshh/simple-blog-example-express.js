@@ -12,7 +12,7 @@ module.exports=function(){
             });
         },
         query:function(sql,data,callback){
-            this.db.query(sql,(err,results)=>{
+            this.db.query(sql,data,(err,results)=>{
                 return callback(results);
             });
         },

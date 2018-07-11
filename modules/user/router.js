@@ -16,7 +16,7 @@ router.get('/add', (req,res)=>{
     controller.add(req,res);
 });
 
-router.post('/edit/:id',(req,res)=>{
+router.get('/edit/:id',(req,res)=>{
     controller.edit(req,res);
 });
 
