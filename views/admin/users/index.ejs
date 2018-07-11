@@ -1,0 +1,45 @@
+<% include ../inc/header %>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>User List</h1>
+                </div>
+                <div class="pull-right">
+                    <p>
+                        <a href="/admin/users/add" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </a>
+                    </p>
+                </div>
+                <table class="table table-stripped">
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Created At</th>
+                        <th>Action</th>
+                    </tr>
+                    <%
+                        users.forEach((u,i)=>{
+                    %>
+                    <tr>
+                        <td><%=u.id %></td>
+                        <td><%=u.username%></td>
+                        <td><%=u.email %></td>
+                        <td><%=u.password %></td>
+                        <td><%=u.created_at %></td>
+                        <td><a href="/admin/users/edit/<%=u.id%>" class="btn btn-default">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a> | <a href="/users/delete/<%=u.id%>" onclick="return confirm('Are you sure to delete?')" class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a></td>
+                    </tr>
+                    <%
+                        })
+                    %>
+                </table>      
+            </div>
+        </div>
+<% include ../inc/footer %>
+    

@@ -1,0 +1,43 @@
+<% include ../inc/header %>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>Post List</h1>
+                </div>
+                <div class="pull-right">
+                    <p>
+                        <a href="/admin/posts/add" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </a>
+                    </p>
+                </div>
+                <table class="table table-stripped">
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Created At</th>
+                        <th>Action</th>
+                    </tr>
+                    <%
+                        posts.forEach((p,i)=>{
+                    %>
+                    <tr>
+                        <td><%=p.id %></td>
+                        <td><%=p.title%></td>
+                        <td><%=p.description %></td>
+                        <td><%=p.created_at %></td>
+                        <td><a href="/posts/edit/<%=p.id%>" class="btn btn-default">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a> | <a href="/posts/delete/<%=p.id%>" onclick="return confirm('Are you sure to delete?')" class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a></td>
+                    </tr>
+                    <%
+                        })
+                    %>
+                </table>      
+            </div>
+        </div>
+<% include ../inc/footer %>
+    
