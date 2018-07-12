@@ -35,6 +35,9 @@ module.exports=function(){
             userrepository.insert(data,function(results){
                 res.redirect("/admin/users");
             });
+            userrepository.update(data,function(results){
+                res.redirect("/admin/users");
+            });
         }
     }
 }

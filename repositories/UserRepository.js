@@ -22,6 +22,13 @@ module.exports=function(){
             database.query(sql,data,function(results){
                 return callback(results);
             });
+        },
+        update:function(data,callback){
+            database.connect();
+            var sql ="update users set username=?, email=?, password=? where id=?";
+            database.query(sql,data,function(results){
+                return callback(results);
+            });
         }
     };
 };
