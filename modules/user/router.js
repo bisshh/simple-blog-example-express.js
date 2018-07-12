@@ -1,6 +1,8 @@
 var express=require("express");
 var router=express.Router();
 var mailer=require("nodemailer");
+var request=require("request");
+
 var UserController=require('./UserController');
 
 var controller=new UserController();
@@ -30,13 +32,19 @@ router.post('/mail',(req,res)=>{
         host:"smtp.vianet.com.np",
         port:25
     }).sendMail({
-        from:"info@resham.info.np",
+        from:"reshamkhadka61@gmail.com",
         to:req.body.email,
         body:req.body.message,
         html:req.body.message,
         subject:req.body.subject
     },(err)=>{
         console.log("Mail sent successfully");
+    });
+});
+
+router.get("/jobs", (req,res)=>{
+    request.get("http://www.jobsnepal.com/", (err, response)=>{
+        res.send(response.body);
     });
 });
 
