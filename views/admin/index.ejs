@@ -1,0 +1,23 @@
+<% include ./inc/header %>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header text-center">
+                    <h1>Admin</h1>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <form action="/admin" method="POST">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                        <input type="submit" class="btn btn-primary" name="login" value="Login"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+<% include ./inc/footer %>
+    

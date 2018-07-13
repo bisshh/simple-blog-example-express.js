@@ -10,13 +10,18 @@
   "author": "Resham",
   "license": "ISC",
   "dependencies": {
-    "express": "4.16.3",
-    "ejs": "2.6.1",
-    "mysql": "2.15.0",
-    "jquery": "3.3.1",
+    "body-parser": "1.18.3",
     "bootstrap": "3.3.7",
+    "cookie-parser": "^1.4.3",
+    "ejs": "2.6.1",
+    "express": "4.16.3",
+    "express-session": "^1.15.6",
+    "jquery": "3.3.1",
+    "md5": "^2.2.1",
+    "morgan": "^1.9.0",
+    "mysql": "2.15.0",
     "nodemailer": "4.6.7",
     "request": "2.87.0",
-    "body-parser": "1.18.3"
+    "serve-favicon": "^2.5.0"
   }
 }
